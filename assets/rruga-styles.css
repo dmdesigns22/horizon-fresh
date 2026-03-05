@@ -383,264 +383,60 @@ product-card,
 }
 
 /* ============================================
-   PRODUCT PAGE — Split Layout
-   Left 50%: image | Right 50%: info (3 zones)
+   PRODUCT PAGE — 50/50 SPLIT LAYOUT
+   Left: product image | Right: product info
+   Full viewport height, background #EBE5DD
    ============================================ */
 
-/* Full-width, no outer padding */
+/* Remove section padding and gap */
 [data-testid="product-information"] {
   padding: 0 !important;
-  max-width: 100% !important;
   --gap: 0px !important;
 }
 
-/* Grid: 50/50 split, full viewport height */
+/* True 50/50 grid, full viewport height */
 .product-information__grid--half {
-  display: grid !important;
   grid-template-columns: 1fr 1fr !important;
-  min-height: calc(100vh - var(--header-group-height, 40px)) !important;
+  min-height: calc(100vh - var(--header-group-height, 60px)) !important;
   gap: 0 !important;
 }
 
-/* ---- LEFT: Media ---- */
-.product-information__media {
+/* Left column — sticky image panel */
+.product-information__grid--half.product-information--media-left .product-information__media {
+  grid-column: 1 / 2 !important;
+  align-self: start;
   position: sticky !important;
-  top: var(--header-group-height, 40px) !important;
-  height: calc(100vh - var(--header-group-height, 40px)) !important;
+  top: var(--header-group-height, 60px) !important;
+  height: calc(100vh - var(--header-group-height, 60px)) !important;
   overflow-y: auto !important;
   background: #ebe5dd !important;
+  padding: 0 !important;
   border-right: 1px solid #000000 !important;
 }
 
-.product-information__media .product-media-gallery {
-  height: 100% !important;
-}
-
-.product-information__media img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  display: block !important;
-}
-
-/* ---- RIGHT: Details panel — flex column, 3 zones ---- */
-.product-details {
-  display: flex !important;
-  flex-direction: column !important;
-  min-height: calc(100vh - var(--header-group-height, 40px)) !important;
+/* Right column — info panel */
+.product-information__grid--half.product-information--media-left .product-details {
+  grid-column: 2 / 3 !important;
   background: #ebe5dd !important;
-  padding: 0 !important;
 }
 
-/* ZONE 1: Fills remaining space — title top, description centered */
-.product-details > *:not(.variant-picker):not([class*="buy-buttons"]):not([class*="price"]) {
-  flex-shrink: 0;
-}
-
-/* Title — UPPERCASE, Space Mono, top of panel */
-.product-details .product-title,
-.product-details h1,
-.product-details h2 {
-  font-family: 'Space Mono', monospace !important;
-  font-size: 11px !important;
-  font-weight: 400 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.12em !important;
-  color: #000000 !important;
-  padding: 28px 40px 0 !important;
-  margin: 0 !important;
-  line-height: 1.5 !important;
-}
-
-/* Description — lowercase, centered, small, dashes style */
-.product-details [class*="text_aEtTtq"],
-.product-details .rte:not(h1):not(h2):not(h3) {
-  font-family: 'Space Mono', monospace !important;
-  font-size: 10px !important;
-  font-weight: 400 !important;
-  text-transform: none !important;
-  color: #000000 !important;
-  text-align: center !important;
-  padding: 0 40px !important;
-  line-height: 1.8 !important;
-  flex-grow: 1 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-}
-
-/* Hide built-in dividers — we use borders */
-.product-details [class*="divider"] hr,
-.product-details [class*="_divider"] {
-  display: none !important;
-}
-
-/* ZONE 2 separator — top border on variant picker */
-.product-details .variant-picker,
-.product-details [class*="variant-picker"] {
-  border-top: 1px solid #000000 !important;
-  border-bottom: 1px solid #000000 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Zone 2: SIZE + QUANTITY side by side */
-.product-details [class*="buy-buttons"],
-.product-details buy-buttons {
-  border-bottom: 1px solid #000000 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* SIZE zone label */
-.product-details .variant-picker label,
-.product-details .variant-picker [class*="label"] {
-  font-family: 'Space Mono', monospace !important;
-  font-size: 9px !important;
-  font-weight: 400 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.1em !important;
-  color: #000000 !important;
-  display: block !important;
-  padding: 16px 0 6px !important;
-}
-
-/* Variant picker inner layout */
-.product-details .variant-picker__option-values,
-.product-details .variant-picker [class*="option"] {
-  padding: 0 40px 16px !important;
-}
-
-/* SIZE + QUANTITY row inside buy-buttons */
-.product-details [class*="buy-buttons"] .quantity-wrapper,
-.product-details [class*="buy-buttons"] quantity-input,
-.product-details [class*="quantity"] {
-  border-right: 1px solid #000000 !important;
-}
-
-/* Quantity row */
-.product-details [class*="buy-buttons"] > :first-child {
-  display: flex !important;
-  flex-direction: row !important;
-  padding: 16px 40px !important;
-  gap: 0 !important;
-  align-items: center !important;
-}
-
-/* Quantity label */
-.product-details [class*="quantity-label"],
-.product-details .quantity__label {
-  font-family: 'Space Mono', monospace !important;
-  font-size: 9px !important;
-  font-weight: 400 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.1em !important;
-  color: #000000 !important;
-}
-
-/* Quantity controls */
-.product-details quantity-input,
-.product-details [class*="quantity-input"],
-.product-details .quantity {
-  font-family: 'Space Mono', monospace !important;
-  font-size: 11px !important;
-  background: transparent !important;
-  border: none !important;
-  color: #000000 !important;
-}
-
-.product-details .quantity__button,
-.product-details [class*="quantity__button"] {
-  background: transparent !important;
-  border: none !important;
-  font-size: 14px !important;
-  cursor: pointer !important;
-  color: #000000 !important;
-  padding: 0 8px !important;
-}
-
-/* ZONE 3: Price */
-.product-details [class*="price_tVjtKg"],
-.product-details > .price-wrapper,
-.product-details > [data-block-type="price"] {
-  padding: 24px 40px 8px !important;
-  text-align: center !important;
-}
-
-.product-details > [data-block-type="price"] .price,
-.product-details > [data-block-type="price"] [class*="price"] {
-  font-family: 'Space Mono', monospace !important;
-  font-size: 13px !important;
-  font-weight: 400 !important;
-  color: #000000 !important;
-  text-align: center !important;
-  display: block !important;
-  letter-spacing: 0.06em !important;
-}
-
-/* Add to cart — full width, dark, UPPERCASE */
-.product-details [class*="add-to-cart"] button,
-.product-details .button[name="add"],
-.product-details button[name="add"],
-.product-details [type="submit"].button {
-  font-family: 'Space Mono', monospace !important;
-  font-size: 10px !important;
-  font-weight: 400 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.12em !important;
-  background: #1a1a1a !important;
-  color: #ffffff !important;
-  border: none !important;
-  border-radius: 0 !important;
-  width: 100% !important;
-  padding: 20px 0 !important;
-  cursor: pointer !important;
-  transition: opacity 0.2s ease !important;
-}
-
-.product-details [class*="add-to-cart"] button:hover,
-.product-details button[name="add"]:hover {
-  opacity: 0.85 !important;
-}
-
-/* Hide accelerated checkout (PayPal, Shop Pay etc.) */
-.product-details [class*="accelerated-checkout"],
-.shopify-payment-button {
-  display: none !important;
-}
-
-/* Hide sticky ATC bar */
-.sticky-add-to-cart {
-  display: none !important;
-}
-
-/* ---- MOBILE: Stack vertically ---- */
+/* Mobile — stack vertically */
 @media screen and (max-width: 749px) {
   .product-information__grid--half {
     grid-template-columns: 1fr !important;
     min-height: unset !important;
   }
 
-  .product-information__media {
+  .product-information__grid--half.product-information--media-left .product-information__media {
+    grid-column: 1 / -1 !important;
     position: relative !important;
-    height: 70vw !important;
     top: 0 !important;
+    height: 70vw !important;
     border-right: none !important;
     border-bottom: 1px solid #000000 !important;
   }
 
-  .product-details h1,
-  .product-details h2 {
-    padding: 20px 20px 0 !important;
-  }
-
-  .product-details [class*="text_aEtTtq"],
-  .product-details .rte:not(h1):not(h2):not(h3) {
-    padding: 0 20px !important;
-  }
-
-  .product-details .variant-picker__option-values,
-  .product-details .variant-picker [class*="option"] {
-    padding: 0 20px 16px !important;
+  .product-information__grid--half.product-information--media-left .product-details {
+    grid-column: 1 / -1 !important;
   }
 }
