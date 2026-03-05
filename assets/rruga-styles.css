@@ -134,7 +134,7 @@ header-component.header,
   font-size: 11px !important;
   font-weight: 400 !important;
   letter-spacing: 0.05em !important;
-  text-transform: lowercase !important;
+  text-transform: uppercase !important;
   color: #000000 !important;
   text-decoration: none !important;
   opacity: 1;
@@ -160,7 +160,7 @@ header-component.header,
   font-size: 11px !important;
   font-weight: 400 !important;
   letter-spacing: 0.05em !important;
-  text-transform: lowercase !important;
+  text-transform: uppercase !important;
   color: #000000 !important;
   text-decoration: none !important;
   background: transparent !important;
@@ -187,7 +187,7 @@ header-component.header,
   font-family: 'Space Mono', monospace !important;
   font-size: 11px !important;
   font-weight: 400 !important;
-  text-transform: lowercase !important;
+  text-transform: uppercase !important;
   letter-spacing: 0.05em !important;
   --header-actions-font-family: 'Space Mono', monospace !important;
   --shopify-account-font-body: 'Space Mono', monospace !important;
