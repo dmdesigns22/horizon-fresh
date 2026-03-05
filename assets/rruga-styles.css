@@ -492,6 +492,43 @@ product-card,
   margin-bottom: 6px;
 }
 
+/* ============================================
+   PRODUCT PAGE — QUANTITY (left) + PRICE (right) same row
+   CSS Grid on group-block-content: buy_buttons (col 1)
+   and price (col 2) auto-place into the same grid row.
+   ============================================ */
+
+/* 2-column grid: fill + shrink-to-price */
+.product-details .group-block-content {
+  display: grid !important;
+  grid-template-columns: 1fr auto !important;
+  align-items: start;
+}
+
+/* All blocks span both columns by default */
+.product-details .group-block-content > * {
+  grid-column: 1 / -1;
+}
+
+/* Buy buttons: left column only — leaves col 2 free for price in same row */
+.product-details .buy-buttons-block {
+  grid-column: 1 / 2 !important;
+}
+
+/* Price: right column, top-aligned = same level as QUANTITY label */
+.product-details product-price[data-block-id="price_tVjtKg"] {
+  grid-column: 2 / 3 !important;
+  align-self: start !important;
+  padding: 0 20px !important;
+}
+
+/* 1px divider above the Add to Cart button */
+.product-details .add-to-cart-button {
+  border-top: 1px solid #000000 !important;
+  margin-top: 8px !important;
+  padding-block: 12px !important;
+}
+
 /* Mobile — stack vertically */
 @media screen and (max-width: 749px) {
   .product-information__grid--half {
