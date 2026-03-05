@@ -493,39 +493,36 @@ product-card,
 }
 
 /* ============================================
-   PRODUCT PAGE — QUANTITY (left) + PRICE (right) same row
-   CSS Grid on group-block-content: buy_buttons (col 1)
-   and price (col 2) auto-place into the same grid row.
+   PRODUCT PAGE — QUANTITY → PRICE → ATC order
+   Price is injected inline inside buy-buttons.liquid
+   between quantity and ATC. External price block hidden.
    ============================================ */
 
-/* 2-column grid: fill + shrink-to-price */
-.product-details .group-block-content {
-  display: grid !important;
-  grid-template-columns: 1fr auto !important;
-  align-items: start;
-}
-
-/* All blocks span both columns by default */
-.product-details .group-block-content > * {
-  grid-column: 1 / -1;
-}
-
-/* Buy buttons: left column only — leaves col 2 free for price in same row */
-.product-details .buy-buttons-block {
-  grid-column: 1 / 2 !important;
-}
-
-/* Price: right column, top-aligned = same level as QUANTITY label */
+/* Hide external price block on product page (price is now inline) */
 .product-details product-price[data-block-id="price_tVjtKg"] {
-  grid-column: 2 / 3 !important;
-  align-self: start !important;
-  padding: 0 20px !important;
+  display: none !important;
+}
+
+/* Hide inline price everywhere EXCEPT product-details */
+.rruga-inline-price {
+  display: none !important;
+}
+
+.product-details .rruga-inline-price {
+  display: block !important;
+  font-family: 'Space Mono', monospace !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  color: #000000 !important;
+  padding: 12px 0 !important;
+  width: 100% !important;
+  flex: 0 0 100% !important;
 }
 
 /* 1px divider above the Add to Cart button */
 .product-details .add-to-cart-button {
   border-top: 1px solid #000000 !important;
-  margin-top: 8px !important;
+  margin-top: 0 !important;
   padding-block: 12px !important;
 }
 

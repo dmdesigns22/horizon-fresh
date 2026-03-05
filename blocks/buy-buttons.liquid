@@ -216,6 +216,10 @@
             </span>
           {%- endunless -%}
 
+          <product-price class="rruga-inline-price" data-product-id="{{ product.id }}">
+            {% render 'price', product_resource: product, show_sale_price_first: true %}
+          </product-price>
+
           {% content_for 'block',
             type: 'add-to-cart',
             id: 'add-to-cart',
