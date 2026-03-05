@@ -493,6 +493,11 @@ product-card,
   flex-direction: column;
 }
 
+.product-details .quantity-selector {
+  flex: none !important;
+}
+}
+
 /* QUANTITY label above the -/+ controls */
 .product-details .quantity-selector-wrapper::before {
   content: 'QUANTITY';
