@@ -563,7 +563,7 @@ product-card,
 }
 
 .product-details .buy-buttons-block {
-  margin-top: auto !important;
+  margin-top: 0 !important;
 }
 
 /* Mobile — stack vertically */
