@@ -462,6 +462,36 @@ product-card,
   color: #000000 !important;
 }
 
+/* ============================================
+   PRODUCT PAGE — BUY BUTTONS
+   ============================================ */
+
+/* Remove Buy it now / accelerated checkout */
+.accelerated-checkout-block,
+.shopify-payment-button {
+  display: none !important;
+}
+
+/* Quantity selector — force onto its own row */
+.product-details .quantity-selector-wrapper {
+  flex: 0 0 100% !important;
+  width: 100% !important;
+}
+
+/* QUANTITY label above the -/+ controls */
+.product-details .quantity-selector-wrapper::before {
+  content: 'QUANTITY';
+  display: block;
+  width: 100%;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
 /* Mobile — stack vertically */
 @media screen and (max-width: 749px) {
   .product-information__grid--half {
