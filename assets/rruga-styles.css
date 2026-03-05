@@ -180,6 +180,20 @@ header-component.header,
   background: transparent !important;
 }
 
+/* Account button — force Space Mono (overrides --header-actions-font-family and shopify-account vars) */
+.account-button__text,
+.account-button--text shopify-account,
+.header-actions__text-style {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  text-transform: lowercase !important;
+  letter-spacing: 0.05em !important;
+  --header-actions-font-family: 'Space Mono', monospace !important;
+  --shopify-account-font-body: 'Space Mono', monospace !important;
+  --shopify-account-font-heading: 'Space Mono', monospace !important;
+}
+
 /* Cart bubble — Space Mono, small */
 .cart-bubble {
   font-family: 'Space Mono', monospace !important;
