@@ -1,0 +1,251 @@
+/* ============================================
+   RRUGA STUDIOS — Custom Styles
+   Brand: Minimal, Editorial, High-fashion
+   Font: Space Mono | Background: #EBE5DD
+   ============================================ */
+
+/* --- Font --- */
+@font-face {
+  font-family: 'Space Mono';
+  src: url('{{ 'SpaceMono-Regular.woff2' | asset_url }}') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- Global Resets --- */
+body,
+* {
+  font-family: 'Space Mono', monospace;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+body {
+  background-color: #ebe5dd !important;
+  color: #000000;
+}
+
+/* Remove gradients and decorative effects globally */
+*::before,
+*::after {
+  box-shadow: none !important;
+}
+
+/* ============================================
+   HEADER
+   Layout: left (nav) | center (logo) | right (actions)
+   Transparent, flat, no borders, no shadows
+   ============================================ */
+
+/* Header wrapper — transparent, flat */
+header-component.header,
+.header {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Header rows — transparent, no dividers */
+.header__row {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  --border-bottom-width: 0px !important;
+  --border-bottom-width-mobile: 0px !important;
+}
+
+/* Remove underlay overlays */
+.header__underlay {
+  display: none !important;
+}
+
+/* Header inner columns layout */
+.header__columns {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 20px 32px !important;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Left column — nav links */
+.header__column--left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 24px !important;
+  flex: 1 !important;
+  justify-content: flex-start !important;
+}
+
+/* Center column — brand name */
+.header__column--center {
+  flex: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Right column — utility links */
+.header__column--right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px !important;
+  flex: 1 !important;
+  justify-content: flex-end !important;
+}
+
+/* --- Logo / Brand Name --- */
+.header__logo,
+.header-logo,
+[data-testid="header-top-center"] .logo,
+[data-testid="header-top-center"] a {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  color: #000000 !important;
+  text-decoration: none !important;
+}
+
+/* Logo image — hide if using text logo */
+.header__logo img,
+.header-logo img {
+  display: none;
+}
+
+/* --- Navigation Links (left) --- */
+.header__column--left a,
+.header__column--left .header-menu__item,
+.header__column--left nav a,
+[data-testid="header-top-left"] a {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: lowercase !important;
+  color: #000000 !important;
+  text-decoration: none !important;
+  opacity: 1;
+  transition: opacity 0.2s ease !important;
+}
+
+.header__column--left a:hover,
+.header__column--left .header-menu__item:hover,
+[data-testid="header-top-left"] a:hover {
+  opacity: 0.5 !important;
+  text-decoration: none !important;
+}
+
+/* --- Action Links (right) — search, cart, account --- */
+.header__column--right a,
+.header__column--right button,
+.header-actions__action,
+.header-actions a,
+.header-actions button,
+[data-testid="header-top-right"] a,
+[data-testid="header-top-right"] button {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: lowercase !important;
+  color: #000000 !important;
+  text-decoration: none !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.2s ease !important;
+}
+
+.header__column--right a:hover,
+.header__column--right button:hover,
+.header-actions__action:hover,
+[data-testid="header-top-right"] a:hover,
+[data-testid="header-top-right"] button:hover {
+  opacity: 0.5 !important;
+  background: transparent !important;
+}
+
+/* Hide cart icon SVG — show text label instead */
+.header-actions__cart-icon .svg-wrapper,
+.header-actions__cart-icon svg {
+  display: none !important;
+}
+
+.header-actions__cart-icon span:not(.visually-hidden) {
+  display: block !important;
+}
+
+/* Cart bubble count — keep visible next to text */
+.cart-bubble {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 10px !important;
+}
+
+/* Hide search SVG icon — text only */
+.search-action .svg-wrapper,
+.search-action svg {
+  display: none !important;
+}
+
+/* --- Mobile header drawer button --- */
+.header__column--left .mobile-menu-toggle,
+.mobile-menu-toggle {
+  background: transparent !important;
+  border: none !important;
+  color: #000000 !important;
+  font-family: 'Space Mono', monospace !important;
+  font-size: 11px !important;
+  cursor: pointer;
+}
+
+/* --- Color scheme overrides — force transparent/sand bg --- */
+[class*="color-"] header-component.header,
+[class*="color-"] .header__row {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Header section wrapper */
+.header-section {
+  background: transparent !important;
+}
+
+/* Sticky header — keep transparent on sand background */
+header-component[sticky] .header__row,
+header-component[sticky] {
+  background-color: rgba(235, 229, 221, 0.95) !important;
+}
+
+/* ============================================
+   NAVIGATION BAR (bottom row if used)
+   ============================================ */
+.header__navigation-bar-row {
+  background: transparent !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+@media screen and (max-width: 749px) {
+  .header__columns {
+    padding: 16px 20px !important;
+  }
+
+  .header__column--left {
+    gap: 16px !important;
+  }
+
+  .header__column--right {
+    gap: 14px !important;
+  }
+}
