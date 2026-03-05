@@ -473,10 +473,10 @@ product-card,
   display: none !important;
 }
 
-/* Quantity selector — left side of row, natural width */
+/* Quantity selector — force onto its own row */
 .product-details .quantity-selector-wrapper {
-  flex: 0 0 auto !important;
-  width: auto !important;
+  flex: 0 0 100% !important;
+  width: 100% !important;
 }
 
 /* QUANTITY label above the -/+ controls */
@@ -510,15 +510,15 @@ product-card,
 }
 
 .product-details .rruga-inline-price {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
+  display: block !important;
   font-family: 'Space Mono', monospace !important;
   font-size: 11px !important;
   font-weight: 400 !important;
   color: #000000 !important;
-  flex: 1 !important;
-  text-align: right !important;
+  padding: 12px 0 !important;
+  width: 100% !important;
+  flex: 0 0 100% !important;
+  text-align: center !important;
 }
 
 /* Center product description text */
@@ -527,13 +527,17 @@ product-card,
   text-align: center !important;
 }
 
-/* 1px divider above Add to Cart + force ATC onto its own full-width row */
+/* Divider after quantity section (above inline price) */
+.product-details .quantity-selector-wrapper {
+  border-bottom: 1px solid #000000;
+  padding-bottom: 12px;
+}
+
+/* 1px divider above the Add to Cart button */
 .product-details .add-to-cart-button {
   border-top: 1px solid #000000 !important;
   margin-top: 0 !important;
   padding-block: 12px !important;
-  flex: 0 0 100% !important;
-  width: 100% !important;
 }
 
 /* Make product-details a flex column to stack blocks correctly */
@@ -559,22 +563,8 @@ product-card,
   padding-top: 20px !important;
 }
 
-/* Center product title */
-.product-details [data-block-id="group_icgrde"] {
-  align-items: center !important;
-}
-
-.product-details [data-block-id="group_icgrde"] .text-block {
-  text-align: center !important;
-}
-
-/* Bottom wrapper: SIZE + dividers + QUANTITY|PRICE + ATC — pinned to bottom */
-.product-details [data-block-id="variant_picker_R3rGDr"] {
-  margin-top: auto !important;
-}
-
 .product-details .buy-buttons-block {
-  margin-top: 0 !important;
+  margin-top: auto !important;
 }
 
 /* Mobile — stack vertically */
