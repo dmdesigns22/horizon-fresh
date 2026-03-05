@@ -269,7 +269,15 @@ header-component[sticky] {
   order: 2;
   border-top: 0.5px solid #000000;
   padding: 16px 20px;
+}
+
+[data-testid="product-list"] .section-resource-list__header > *,
+[data-testid="product-list"] .section-resource-list__header .content-for-block,
+[data-testid="product-list"] .section-resource-list__header [class*="product-list-content"] {
+  width: 100% !important;
   justify-content: center !important;
+  display: flex !important;
+  align-items: center !important;
 }
 
 [data-testid="product-list"] .section-resource-list__content {
