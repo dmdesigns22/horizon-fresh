@@ -256,6 +256,26 @@ header-component[sticky] {
 }
 
 /* ============================================
+   FEATURED COLLECTION — HEADER BELOW GRID
+   The section renders header first in markup,
+   CSS order moves it beneath the product grid
+   ============================================ */
+[data-testid="product-list"] {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+[data-testid="product-list"] .section-resource-list__header {
+  order: 2;
+  border-top: 0.5px solid #000000;
+  padding: 16px 20px;
+}
+
+[data-testid="product-list"] .section-resource-list__content {
+  order: 3;
+}
+
+/* ============================================
    PRODUCT GRID — BORDER GRID EFFECT
    top + right on each item, left + bottom on container
    creates a seamless 0.5px black grid
