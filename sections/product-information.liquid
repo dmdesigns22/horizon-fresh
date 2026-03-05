@@ -176,6 +176,40 @@
   additional_blocks: additional_blocks
 %}
 
+{% javascript %}
+  (function () {
+    function reorderProductDetails() {
+      var details = document.querySelector('.product-details .group-block-content');
+      if (!details) return;
+
+      // Move variant-picker before the price container
+      var variantPicker = details.querySelector('.variant-picker');
+      var priceContainer = details.querySelector('.rruga-inline-price');
+      if (variantPicker && priceContainer) {
+        priceContainer.parentNode.insertBefore(variantPicker, priceContainer);
+      }
+
+      // Wrap variant-option and quantity-selector-wrapper side by side
+      if (details.querySelector('.rruga-size-qty-row')) return;
+      var variantOption = details.querySelector('.variant-option');
+      var qtyWrapper = details.querySelector('.quantity-selector-wrapper');
+      if (!variantOption || !qtyWrapper) return;
+
+      var row = document.createElement('div');
+      row.className = 'rruga-size-qty-row';
+      variantOption.parentNode.insertBefore(row, variantOption);
+      row.appendChild(variantOption);
+      row.appendChild(qtyWrapper);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', reorderProductDetails);
+    } else {
+      reorderProductDetails();
+    }
+  })();
+{% endjavascript %}
+
 {% stylesheet %}
   .sticky-add-to-cart__bar {
     position: fixed;

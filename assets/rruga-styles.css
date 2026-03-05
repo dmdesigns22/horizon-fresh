@@ -431,10 +431,17 @@ product-card,
    PRODUCT PAGE — SIZE DROPDOWN
    ============================================ */
 
+.variant-option.variant-option--dropdowns {
+  width: 20% !important;
+  display: flex !important;
+  align-items: center !important;
+  flex-direction: column !important;
+}
+
 /* Label — UPPERCASE, Space Mono */
 .variant-option--dropdowns label {
   font-family: 'Space Mono', monospace !important;
-  font-size: 10px !important;
+  font-size: 16px !important;
   font-weight: 400 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.1em !important;
@@ -479,24 +486,23 @@ product-card,
   display: none !important;
 }
 
-/* Quantity selector — force onto its own row */
-.product-details .quantity-selector-wrapper {
-  flex: 0 0 100% !important;
-  width: 100% !important;
+
+.quantity-selector-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* QUANTITY label above the -/+ controls */
 .product-details .quantity-selector-wrapper::before {
   content: 'QUANTITY';
   display: block;
-  width: 100%;
   font-family: 'Space Mono', monospace;
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #000000;
-  margin-bottom: 6px;
 }
 
 /* ============================================
@@ -533,11 +539,6 @@ product-card,
   text-align: center !important;
 }
 
-/* Divider after quantity section (above inline price) */
-.product-details .quantity-selector-wrapper {
-  border-bottom: 1px solid #000000;
-  padding-bottom: 12px;
-}
 
 /* 1px divider above the Add to Cart button */
 .product-details .add-to-cart-button {
@@ -567,6 +568,17 @@ product-card,
   justify-content: flex-start !important;
   gap: 0 !important;
   padding-top: 20px !important;
+}
+
+/* SIZE + QUANTITY side-by-side wrapper (injected via JS) */
+.rruga-size-qty-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
 
 .product-details .buy-buttons-block {
