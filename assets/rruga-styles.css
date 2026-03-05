@@ -527,6 +527,25 @@ product-card,
   text-align: center !important;
 }
 
+/* "product details -" label above description */
+.product-details [data-block-id="text_aEtTtq"]::before {
+  content: 'product details -';
+  display: block;
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+/* Force divider lines in product-details to be solid black */
+.product-details .divider__line {
+  border-bottom-color: #000000 !important;
+  border-right-color: transparent !important;
+}
+
 /* Divider after quantity section (above inline price) */
 .product-details .quantity-selector-wrapper {
   border-bottom: 1px solid #000000;
@@ -564,7 +583,7 @@ product-card,
 }
 
 .product-details .buy-buttons-block {
-  margin-top: 0 !important;
+  margin-top: auto !important;
 }
 
 /* Mobile — stack vertically */
