@@ -254,3 +254,18 @@ header-component[sticky] {
     gap: 14px !important;
   }
 }
+
+/* ============================================
+   PRODUCT GRID — BORDER GRID EFFECT
+   top + right on each item, left + bottom on container
+   creates a seamless 0.5px black grid
+   ============================================ */
+.resource-list {
+  border-left: 0.5px solid #000000;
+  border-bottom: 0.5px solid #000000;
+}
+
+.resource-list__item {
+  border-top: 0.5px solid #000000;
+  border-right: 0.5px solid #000000;
+}
