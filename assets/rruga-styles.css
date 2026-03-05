@@ -420,6 +420,48 @@ product-card,
   background: #ebe5dd !important;
 }
 
+/* ============================================
+   PRODUCT PAGE — SIZE DROPDOWN
+   ============================================ */
+
+/* Label — UPPERCASE, Space Mono */
+.variant-option--dropdowns label {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 10px !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  color: #000000 !important;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Select wrapper — 1px black border, no radius */
+.variant-option--dropdowns .variant-option__select-wrapper {
+  border: 1px solid #000000 !important;
+  border-radius: 0 !important;
+  background: #ebe5dd !important;
+  margin-top: 0 !important;
+}
+
+/* Select element */
+.variant-option--dropdowns .variant-option__select {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 10px !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: #000000 !important;
+  background: #ebe5dd !important;
+  border-radius: 0 !important;
+  cursor: pointer;
+}
+
+/* Caret icon color */
+.variant-option--dropdowns .icon-caret {
+  color: #000000 !important;
+}
+
 /* Mobile — stack vertically */
 @media screen and (max-width: 749px) {
   .product-information__grid--half {
