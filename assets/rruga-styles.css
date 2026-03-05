@@ -517,6 +517,19 @@ product-card,
   padding: 12px 0 !important;
   width: 100% !important;
   flex: 0 0 100% !important;
+  text-align: center !important;
+}
+
+/* Center product description text */
+.product-details [data-block-id="text_aEtTtq"],
+.product-details [data-block-id="text_aEtTtq"] * {
+  text-align: center !important;
+}
+
+/* Divider after quantity section (above inline price) */
+.product-details .quantity-selector-wrapper {
+  border-bottom: 1px solid #000000;
+  padding-bottom: 12px;
 }
 
 /* 1px divider above the Add to Cart button */
@@ -524,6 +537,24 @@ product-card,
   border-top: 1px solid #000000 !important;
   margin-top: 0 !important;
   padding-block: 12px !important;
+}
+
+/* Pin ATC to bottom — make product-details a full-height flex column */
+.product-information__grid--half.product-information--media-left .product-details {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: calc(100vh - var(--header-group-height, 60px)) !important;
+}
+
+.product-details .group-block,
+.product-details .group-block-content {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+}
+
+.product-details .buy-buttons-block {
+  margin-top: auto !important;
 }
 
 /* Mobile — stack vertically */
