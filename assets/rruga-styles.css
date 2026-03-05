@@ -546,11 +546,20 @@ product-card,
   min-height: calc(100vh - var(--header-group-height, 60px)) !important;
 }
 
-.product-details .group-block,
-.product-details .group-block-content {
+/* Only expand the direct group-block wrapper, not nested group blocks (e.g. title group_icgrde) */
+.product-details > .group-block {
   display: flex !important;
   flex-direction: column !important;
   flex: 1 !important;
+  height: auto !important;
+}
+
+.product-details > .group-block > .group-block-content {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+  justify-content: flex-start !important;
+  padding-top: 20px !important;
 }
 
 .product-details .buy-buttons-block {
