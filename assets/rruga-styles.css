@@ -401,16 +401,16 @@ product-card,
   gap: 0 !important;
 }
 
-/* Left column — scrollable image panel */
+/* Left column — natural flow, all images stack vertically, page scrolls */
 .product-information__grid--half.product-information--media-left .product-information__media {
   grid-column: 1 / 2 !important;
-  overflow-y: scroll !important;
+  align-self: start !important;
   background: #ebe5dd !important;
   padding: 0 !important;
   border-right: 1px solid #000000 !important;
 }
 
-/* Right column — sticky info panel */
+/* Right column — sticky, stays fixed while left images scroll */
 .product-information__grid--half.product-information--media-left .product-details {
   grid-column: 2 / 3 !important;
   background: #ebe5dd !important;
@@ -418,6 +418,7 @@ product-card,
   top: 0 !important;
   height: 100vh !important;
   overflow-y: auto !important;
+  align-self: start !important;
 }
 
 /* ============================================
