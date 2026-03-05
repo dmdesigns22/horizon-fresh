@@ -66,10 +66,17 @@ header-component.header,
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  padding: 20px 32px !important;
+  padding: 5px 32px !important;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
+}
+
+/* Override theme section padding on header rows */
+.header__row.section {
+  --padding-block-start: 0px !important;
+  --padding-block-end: 0px !important;
+  padding-block: 0 !important;
 }
 
 /* Left column — nav links */
@@ -238,7 +245,7 @@ header-component[sticky] {
    ============================================ */
 @media screen and (max-width: 749px) {
   .header__columns {
-    padding: 16px 20px !important;
+    padding: 5px 20px !important;
   }
 
   .header__column--left {
