@@ -56,6 +56,11 @@ header-component.header,
   --border-bottom-width-mobile: 0px !important;
 }
 
+/* Bottom border on the navbar */
+header-component.header {
+  border-bottom: 1px solid #000000 !important;
+}
+
 /* Remove underlay overlays */
 .header__underlay {
   display: none !important;
@@ -410,13 +415,13 @@ product-card,
   border-right: 1px solid #000000 !important;
 }
 
-/* Right column — sticky, stays fixed while left images scroll */
+/* Right column — sticky below navbar, fills exact remaining viewport height */
 .product-information__grid--half.product-information--media-left .product-details {
   grid-column: 2 / 3 !important;
   background: #ebe5dd !important;
   position: sticky !important;
-  top: 0 !important;
-  height: 100vh !important;
+  top: var(--header-group-height, 60px) !important;
+  height: calc(100vh - var(--header-group-height, 60px)) !important;
   overflow-y: auto !important;
   align-self: start !important;
 }
