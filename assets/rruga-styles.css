@@ -393,15 +393,20 @@ product-card,
    Full viewport height, background #EBE5DD
    ============================================ */
 
-/* Remove section padding and gap */
+/* Remove section padding and gap — force full viewport width */
 [data-testid="product-information"] {
   padding: 0 !important;
+  padding-inline: 0 !important;
   --gap: 0px !important;
+  --page-margin: 0px !important;
+  --full-page-grid-margin: 0px !important;
 }
 
 /* True 50/50 grid, full viewport height */
 .product-information__grid--half {
   grid-template-columns: 1fr 1fr !important;
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
   min-height: calc(100vh - var(--header-group-height, 60px)) !important;
   gap: 0 !important;
 }
