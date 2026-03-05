@@ -180,26 +180,10 @@ header-component.header,
   background: transparent !important;
 }
 
-/* Hide cart icon SVG — show text label instead */
-.header-actions__cart-icon .svg-wrapper,
-.header-actions__cart-icon svg {
-  display: none !important;
-}
-
-.header-actions__cart-icon span:not(.visually-hidden) {
-  display: block !important;
-}
-
-/* Cart bubble count — keep visible next to text */
+/* Cart bubble — Space Mono, small */
 .cart-bubble {
   font-family: 'Space Mono', monospace !important;
   font-size: 10px !important;
-}
-
-/* Hide search SVG icon — text only */
-.search-action .svg-wrapper,
-.search-action svg {
-  display: none !important;
 }
 
 /* --- Mobile header drawer button --- */
