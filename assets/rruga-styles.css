@@ -269,6 +269,7 @@ header-component[sticky] {
   order: 2;
   border-top: 0.5px solid #000000;
   padding: 16px 20px;
+  justify-content: center !important;
 }
 
 [data-testid="product-list"] .section-resource-list__content {
