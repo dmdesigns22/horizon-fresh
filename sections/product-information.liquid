@@ -181,25 +181,19 @@
     function reorderProductDetails() {
       var details = document.querySelector('.product-details .group-block-content');
       if (!details) return;
-
-      // Move variant-picker before the price container
-      var variantPicker = details.querySelector('.variant-picker');
-      var priceContainer = details.querySelector('.rruga-inline-price');
-      if (variantPicker && priceContainer) {
-        priceContainer.parentNode.insertBefore(variantPicker, priceContainer);
-      }
-
-      // Wrap variant-option and quantity-selector-wrapper side by side
       if (details.querySelector('.rruga-size-qty-row')) return;
-      var variantOption = details.querySelector('.variant-option');
-      var qtyWrapper = details.querySelector('.quantity-selector-wrapper');
-      if (!variantOption || !qtyWrapper) return;
 
+      var variantPicker = details.querySelector('.variant-picker');
+      var buyButtons = details.querySelector('.buy-buttons-block');
+      if (!variantPicker || !buyButtons) return;
+
+      // Wrap variant-picker and the entire buy-buttons-block together
+      // (keeps quantity-selector-wrapper inside product-form-component so buttons work)
       var row = document.createElement('div');
       row.className = 'rruga-size-qty-row';
-      variantOption.parentNode.insertBefore(row, variantOption);
-      row.appendChild(variantOption);
-      row.appendChild(qtyWrapper);
+      variantPicker.parentNode.insertBefore(row, variantPicker);
+      row.appendChild(variantPicker);
+      row.appendChild(buyButtons);
     }
 
     if (document.readyState === 'loading') {

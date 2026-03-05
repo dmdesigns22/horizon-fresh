@@ -494,8 +494,7 @@ product-card,
 }
 
 .product-details .quantity-selector {
-  flex: none !important;
-}
+  flex: auto !important;
 }
 
 /* QUANTITY label above the -/+ controls */
