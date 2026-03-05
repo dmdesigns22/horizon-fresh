@@ -287,14 +287,97 @@ header-component[sticky] {
 /* ============================================
    PRODUCT GRID — BORDER GRID EFFECT
    top + right on each item, left + bottom on container
-   creates a seamless 0.5px black grid
+   creates a seamless 1px black grid
    ============================================ */
 .resource-list {
-  border-left: 0.5px solid #000000;
-  border-bottom: 0.5px solid #000000;
+  border-left: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  gap: 0 !important;
 }
 
 .resource-list__item {
-  border-top: 0.5px solid #000000;
-  border-right: 0.5px solid #000000;
+  border-top: 1px solid #000000;
+  border-right: 1px solid #000000;
+}
+
+/* ============================================
+   PRODUCT CARD — Typography & Layout
+   ============================================ */
+
+/* Card wrapper — no extra padding, flush */
+product-card,
+.product-card {
+  background-color: #ebe5dd !important;
+}
+
+.product-card__content,
+.product-grid__card {
+  background-color: #ebe5dd !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Image — full width, portrait ratio enforced */
+.product-card .product-card__media,
+.product-card [class*="media"],
+.product-card__gallery,
+.product-card__image-wrapper {
+  width: 100% !important;
+  border-radius: 0 !important;
+  overflow: hidden;
+}
+
+.product-card img,
+.product-card .media img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* Product name — UPPERCASE, Space Mono, very small */
+.product-card .product-title,
+.product-card [class*="product-title"],
+.product-card h2,
+.product-card h3,
+.product-card .product-card__name {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 10px !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: #000000 !important;
+  margin: 0 !important;
+  padding: 8px 8px 2px !important;
+  line-height: 1.4 !important;
+}
+
+/* Price — same small size as name */
+.product-card .price,
+.product-card [class*="price"],
+.product-card .product-card__price {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 10px !important;
+  font-weight: 400 !important;
+  color: #000000 !important;
+  margin: 0 !important;
+  padding: 0 8px 10px !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+}
+
+/* Remove any sale/compare price decoration */
+.product-card .price--sale,
+.product-card .price__compare {
+  color: #000000 !important;
+  text-decoration: none !important;
+}
+
+/* Hide quick-add button — clean editorial look */
+.product-card .quick-add,
+.product-card [class*="quick-add"] {
+  display: none !important;
 }
