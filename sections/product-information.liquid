@@ -200,6 +200,16 @@
       variantOption.parentNode.insertBefore(row, variantOption);
       row.appendChild(variantOption);
       row.appendChild(qtyWrapper);
+
+      // Fix: reset serverDisabledMinus so minus button works after DOM move
+      setTimeout(function() {
+        var qtyComp = qtyWrapper.querySelector('quantity-selector-component');
+        if (!qtyComp) return;
+        qtyComp.serverDisabledMinus = false;
+        if (typeof qtyComp.updateButtonStates === 'function') {
+          qtyComp.updateButtonStates();
+        }
+      }, 0);
     }
 
     if (document.readyState === 'loading') {
