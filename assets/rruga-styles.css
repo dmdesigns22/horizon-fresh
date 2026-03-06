@@ -609,3 +609,10 @@ product-card,
     grid-column: 1 / -1 !important;
   }
 }
+
+/* Product page text block — large top gap on desktop only */
+@media screen and (max-width: 749px) {
+  .product-details .text-block {
+    --padding-block-start: 0px !important;
+  }
+}
