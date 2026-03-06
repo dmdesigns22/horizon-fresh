@@ -610,6 +610,11 @@ product-card,
   }
 }
 
+/* Hide specific product page divider */
+.divider-AZ2pWNWxYTjZYRGhjN__divider_VJhene {
+  display: none !important;
+}
+
 /* Product page text block — large top gap on desktop only */
 @media screen and (max-width: 749px) {
   .product-details .text-block {
