@@ -16,7 +16,7 @@
 /* --- Global Resets --- */
 body,
 * {
-  font-family: 'Space Mono', monospace;
+  font-family: 'Space Mono', monospace !important;
   border-radius: 0 !important;
   box-shadow: none !important;
 }
@@ -528,7 +528,7 @@ product-card,
 .product-details .rruga-inline-price {
   display: block !important;
   font-family: 'Space Mono', monospace !important;
-  font-size: 11px !important;
+  font-size: 16px !important;
   font-weight: 400 !important;
   color: #000000 !important;
   padding: 12px 0 !important;
@@ -610,14 +610,26 @@ product-card,
   }
 }
 
-/* Hide specific product page divider */
-.divider-AZ2pWNWxYTjZYRGhjN__divider_VJhene {
+/* Hide divider blocks on product page */
+.product-information .divider,
+.product-details .divider {
   display: none !important;
 }
 
-/* Product page text block — large top gap on desktop only */
+/* Product description text block — top gap on desktop, none on mobile */
+@media screen and (min-width: 750px) {
+  .text-block--AWGdqTHgySVMzUW5YU__text_aEtTtq {
+    --padding-block-start: 40% !important;
+  }
+}
+
 @media screen and (max-width: 749px) {
-  .product-details .text-block {
+  .text-block--AWGdqTHgySVMzUW5YU__text_aEtTtq {
     --padding-block-start: 0px !important;
   }
+}
+
+/* Product page — title top padding */
+.product-details .product__title {
+  padding-top: 10px !important;
 }
